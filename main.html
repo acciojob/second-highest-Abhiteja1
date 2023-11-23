@@ -11,7 +11,7 @@
 		function secondHighest(arr) {
 			//Write your code here
 			arr.sort();
-			let isEqual = allEqual(arr);
+			let isEqual = arr.every((val,index,arr) => val===arr[0]);
 			if(arr.length==0 || arr.length==1 || isEqual==true){
 				return "-Infinity";
 			}
@@ -29,7 +29,7 @@
 			}
 			alert(secondHighest(arr));
 		}
-		Main();
+		// Main();
 	</script>
 
     <script type="text/javascript" src="./script.js">
