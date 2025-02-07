@@ -10,15 +10,18 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			
-			Number(arr.sort((a,b)=>{return (a-b)}));
-			let isAllOne = arr.every((val,index,arr) => val==arr[0]);
-			if(arr.length==0 || arr.length==1 || isAllOne==true){
-				return -Infinity;
+			let bigNum = -Infinity;
+			let secondBig = -Infinity;
+			for(t of arr){
+				if(t>bigNum){
+					secondBig=bigNum;
+					bigNum=t;
+				}
+				else if(t>secondBig && t!= bigNum){
+					secondBig=t;
+				}
 			}
-			else{
-				return arr[arr.length-2];
-			}
+			return secondBig;
 		}
 		function Main() {
 			var n = prompt("Enter the number of elements");
